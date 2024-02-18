@@ -1,1 +1,31 @@
-<p>playlist-list works!</p>
+<table mat-table [dataSource]="playlists">
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let playlist"> {{playlist.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="created">
+        <th mat-header-cell *matHeaderCellDef> Created </th>
+        <td mat-cell *matCellDef="let playlist"> {{playlist.created |  date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="songs">
+        <th mat-header-cell *matHeaderCellDef> Songs </th>
+        <td mat-cell *matCellDef="let playlist"> {{playlist.songs}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="played">
+        <th mat-header-cell *matHeaderCellDef> Played </th>
+        <td mat-cell *matCellDef="let playlist"> {{playlist.played}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="download">
+        <th mat-header-cell *matHeaderCellDef> Download </th>
+        <td mat-cell *matCellDef="let playlist"><a>Download</a></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+</table>
+      
+

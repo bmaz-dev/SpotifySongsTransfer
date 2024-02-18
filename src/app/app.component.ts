@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { PlaylistListComponent } from './components/playlist-list/playlist-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [
+    CommonModule, 
+    RouterLink, 
+    RouterLinkActive, 
+    RouterOutlet,    
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
